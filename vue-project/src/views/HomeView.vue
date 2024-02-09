@@ -1,9 +1,19 @@
-<script setup>
-import TheWelcome from '../components/TheWelcome.vue'
-</script>
+<script>
+import CardItem  from "../components/CardItem.vue";
+import CardItem  from "../components/CardItem.vue";
 
-<template>
-  <main>
-    <TheWelcome />
-  </main>
-</template>
+export defa  ult {
+  name: "Home" ,
+  components: {
+    AddButton, 
+    CardItem,
+    HeadTag,
+  },
+  data: () => {
+   return{
+    
+   }
+   } 
+  
+}
+</script>
