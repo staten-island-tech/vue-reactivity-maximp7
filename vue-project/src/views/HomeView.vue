@@ -1,12 +1,11 @@
 <script>
-import CardItem from "../components/CardItem.vue";
-import AddButton from "../components/AddButton.vue";
-import HeadTag from "../components/HeadTag.vue";
+import CardItem  from "../components/CardItem.vue";
+
 
 export default {
-  name: "Home",
+  name: "Home" ,
   components: {
-    AddButton,
+    AddButton, 
     CardItem,
     HeadTag,
   },
@@ -49,29 +48,5 @@ export default {
 };
 </script>
 
-<template>
-  <div class="all">
-    <HeadTag class="header">Ball Shop</HeadTag>
-    <div class="home">
-      <CardItem v-for="card in stock" :key="card.name" :card="card" />
-    </div>
-  </div>
-</template>
-
-<style>
-.home {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  width: 100%;
 }
-
-.header {
-  grid-template-columns: 1fr;
-  display: flex;
-  justify-content: center;
-}
-.all {
-  align-items: center;
-  justify-content: center;
-}
-</style>
+</script>
