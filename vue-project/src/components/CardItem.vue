@@ -1,31 +1,75 @@
-<template>
-    <div class="item">
-<h1>{{ Item.name }}</h1>
-<img :src="Item.img">
-<h2>{{ Item.price }}</h2>
+<script>
+import { store } from "../store.js";
+import HomeView from "../views/HomeView.vue";
 
-<button @click="$emit('addToCart')">Add to Cart</button>
-    </div>
-</template>
+export default {
+  data() {
+    return {
+      store,
+      HomeView,
+    };
+  },
+  // components:
+  name: "CardItem",
 
-<script setup>
-import {ref} from "vue";
-const props= defineProps({
-    Item: Object,
-});
-const emit = defineEmits([
-    "addToCart"
-])
-//clicker stuff
-const clicked=ref(0);
-
+  props: {
+    card: Object,
+  },
+  methods: {
+    addItemtoCart(card) {
+      store.cart.push(card);
+    },
+  },
+};
 </script>
 
-<style scoped>
-img{
-  width: 150px;
+<template>
+  <div class="container">
+    <div class="card">
+      <h2>{{ card.name }}</h2>
+      <img :src="card.image" alt="" />
+      <h3>{{ card.price }}</h3>
+      <button class="adddd" @click="addItemtoCart(card)">Add to Cart</button>
+    </div>
+  </div>
+</template>
+
+<style>
+.card {
+  box-shadow: 10px 7px 5px rgb(161, 122, 122);
+  border-radius: 3rem;
+  width: 80%;
+  height: 75%;
+  font-size: 3rem;
+  background-color: rgb(255, 168, 168);
+  margin: 8rem auto;
+  align-items: center;
+  border: 0.3rem solid rgb(216, 127, 149);
+  padding: 3rem;
   display: flex;
-  flex-direction: row;
-  margin: auto 0;
+  flex-flow: row wrap;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+
+img {
+  width: 90%;
+}
+
+.adddd {
+  font-size: 3rem;
+  padding: 9rem auto;
+  margin: 3% auto;
+  border: 0.5rem solid rgb(92, 128, 100);
+  text-align: center;
+  border-radius: 2rem;
+  box-sizing: border-box;
+  background-color: rgb(174, 228, 174);
+}
+
+.adddd:hover {
+  background-color: darkgreen;
+  border: 0.5rem solid rgb(0, 0, 0);
 }
 </style>

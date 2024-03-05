@@ -17,12 +17,12 @@ export default {
         {  
           name: "Cheese Burger",
           price: "$30",
-          img: "https://tse2.mm.bing.net/th?id=OIP.JGigDSijh-lKRw6YaZQGVwHaDs&pid=Api&P=0&h=220",
+          img: "cburger.jpg",
         },
         {
           name: "Steak",
           price: "$150",
-          img: "https://tse4.mm.bing.net/th?id=OIP.Ua_IOmOR9bFWFvryTxk0oAHaE8&pid=Api&P=0&h=220",
+          img: "steak.jpg",
         },
         {
           name: "Tuna Tartare",
@@ -47,7 +47,7 @@ export default {
     };
   },
 };
-<script>
+</script>
 
 <template>
   <div class="all">

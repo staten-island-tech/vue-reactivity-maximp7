@@ -13,7 +13,7 @@ export default {
   name: "CartView",
   components: { HeadTag },
 };
-</script>
+</script>.
 
 <template>
   <div class="about">
